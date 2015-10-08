@@ -16,6 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let view = UIView(frame: CGRect(origin: CGPointZero, size: CGSize(width: UIScreen.mainScreen().bounds.size.width, height: 20.0)))
+        view.backgroundColor = GLOBAL_VALUES.COLOR.PRIMARY_LIGHT
+        self.window?.rootViewController?.view.addSubview(view)
+        
         return true
     }
 
