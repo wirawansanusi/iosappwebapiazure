@@ -23,6 +23,7 @@ extension ContactController: MKMapViewDelegate {
             regionRadius * 2.0, regionRadius * 2.0)
         
         mapView.setRegion(coordinateRegion, animated: true)
+        mapView.showsUserLocation = false
         addAnnotation()
     }
     

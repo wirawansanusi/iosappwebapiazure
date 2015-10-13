@@ -102,6 +102,7 @@ extension CategoriesList {
                         self.tableViewShouldAnimate = true
                         self.reinitTableView()
                         
+                        
                     } // END IF..LET NSArray -> [NSDictionary]
                     
                 } // END IF..LET AnyObject? -> NSArray

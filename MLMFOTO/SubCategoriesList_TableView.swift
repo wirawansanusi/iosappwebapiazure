@@ -18,13 +18,6 @@ extension SubCategoriesList: UITableViewDelegate, UITableViewDataSource {
         stylingTableView()
     }
     
-    func stylingTableView() {
-        
-        tableView.contentInset = UIEdgeInsets(top: 20.0, left: 0, bottom: 0, right: 0)
-        tableView.separatorInset = UIEdgeInsetsZero
-        tableView.tableFooterView = UIView(frame: CGRectZero)
-    }
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
         return 1
@@ -32,17 +25,35 @@ extension SubCategoriesList: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        if let search = searchController {
+            
+            if search.active {
+            
+            return filteredSubCategories.count
+            
+            }
+        }
+        
         return subCategories.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("subCategoryCell", forIndexPath: indexPath)
         
-        // Get SubCategory
-        let subCategory = subCategories[indexPath.row]
+        var subCategory: SubCategories?
+        if searchController!.active {
+            
+            // Get FilteredSubCategory
+            subCategory = filteredSubCategories[indexPath.row]
+            
+        } else {
+            
+            // Get SubCategory
+            subCategory = subCategories[indexPath.row]
+        }
         
         // Set SubCategory's title
-        cell.textLabel?.text = subCategory.title
+        cell.textLabel?.text = subCategory!.title
         
         return cell
     }
@@ -52,8 +63,16 @@ extension SubCategoriesList: UITableViewDelegate, UITableViewDataSource {
         // Auto deselecting after table view cell was tapped
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        // Set the selected SubCategory
-        selectedSubCategory = subCategories[indexPath.row]
+        if searchController!.active {
+            
+            // Set the selected FilteredSubCategory
+            selectedSubCategory = filteredSubCategories[indexPath.row]
+            
+        } else {
+            
+            // Set the selected SubCategory
+            selectedSubCategory = subCategories[indexPath.row]
+        }
         
         performSegueWithIdentifier("showProducts", sender: self)
     }

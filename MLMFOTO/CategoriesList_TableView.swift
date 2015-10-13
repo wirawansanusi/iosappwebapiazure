@@ -17,13 +17,6 @@ extension CategoriesList: UITableViewDelegate, UITableViewDataSource {
         stylingTableView()
     }
     
-    func stylingTableView() {
-        
-        tableView.contentInset = UIEdgeInsets(top: 20.0, left: 0, bottom: 0, right: 0)
-        tableView.separatorInset = UIEdgeInsetsZero
-        tableView.tableFooterView = UIView(frame: CGRectZero)
-    }
-    
     func reinitTableView() {
         
         tableView.performSelectorOnMainThread(Selector("reloadData"), withObject: nil, waitUntilDone: false)
@@ -36,17 +29,35 @@ extension CategoriesList: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        if let search = searchController {
+            
+            if search.active {
+            
+                return filteredCategories.count
+            }
+            
+        }
+            
         return categories.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("categoryCell", forIndexPath: indexPath)
         
-        // Get Category
-        let category = categories[indexPath.row]
+        var category: Categories?
+        if searchController!.active {
+    
+            // Get Filtered Category
+            category = filteredCategories[indexPath.row]
+            
+        } else {
+            
+            // Get Category
+            category = categories[indexPath.row]
+        }
         
         // Set Category's title
-        cell.textLabel?.text = category.title
+        cell.textLabel?.text = category!.title
         
         return cell
     }
@@ -56,8 +67,17 @@ extension CategoriesList: UITableViewDelegate, UITableViewDataSource {
         // Auto deselecting after table view cell was tapped
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        // Get the Subcategories from Category
-        selectedCategory = categories[indexPath.row]
+        if searchController!.active {
+            
+            // Get the Subcategories from Category
+            selectedCategory = filteredCategories[indexPath.row]
+            
+        } else {
+            
+            // Get the Subcategories from FilteredCategory
+            selectedCategory = categories[indexPath.row]
+        }
+    
         selectedSubCategory = selectedCategory?.subCategories
         
         // If there's a SubCategories
@@ -72,4 +92,5 @@ extension CategoriesList: UITableViewDelegate, UITableViewDataSource {
             performSegueWithIdentifier("showProducts", sender: self)
         }
     }
+    
 }

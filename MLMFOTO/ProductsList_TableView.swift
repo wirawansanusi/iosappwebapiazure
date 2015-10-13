@@ -32,15 +32,39 @@ extension ProductsList: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        if let search = searchController {
+            
+            if search.active {
+                
+                return filteredProducts.count
+            }
+        }
+        
         return products.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let product = products[indexPath.row]
-        let cell = configureProductDetailCell(product, at: indexPath)
+        var product = [String: AnyObject]()
+        if searchController!.active {
+            
+            product = filteredProducts[indexPath.row]
+            
+        } else {
+            
+            product = products[indexPath.row]
+        }
         
-        return cell
+        var productDetailCell: UITableViewCell?
+        if let _ = product["thumbnails"] as? [UIImageView] {
+            
+            productDetailCell = configureProductDetailCell(product, at: indexPath)
+        } else {
+            
+            productDetailCell = configureProductDetailWithoutThumbnailCell(product, at: indexPath)
+        }
+        
+        return productDetailCell!
     }
     
     func configureProductDetailCell(productDetail: [String: AnyObject], at indexPath: NSIndexPath) -> ProductDetailCell {
@@ -64,25 +88,38 @@ extension ProductsList: UITableViewDelegate, UITableViewDataSource {
             // Set scroll view content size to contain all thumbnails
             cell.thumbnailContainer.contentSize.height = thumbnails.last!.frame.size.height
             cell.thumbnailContainer.contentSize.width = thumbnails.last!.frame.origin.x + thumbnails.last!.frame.size.width
-        } else {
-            
-            // error here
-            print(tableView.indexPathForCell(cell))
-            //print("Delete \(cell.thumbnailContainer.tag)")
-            cell.thumbnailContainer.removeConstraints(cell.thumbnailContainer.constraints)
-            //cell.thumbnailContainer.bounds.size.height = 0
         }
+        
+        cell.initFavoriteTapRecognizer()
+        
+        return cell
+    }
+    
+    func configureProductDetailWithoutThumbnailCell(productDetail: [String: AnyObject], at indexPath: NSIndexPath) -> ProductDetailWithoutThumbnailCell {
+        let cell: ProductDetailWithoutThumbnailCell = tableView.dequeueReusableCellWithIdentifier("productDetailWithoutThumbnailCell", forIndexPath: indexPath) as! ProductDetailWithoutThumbnailCell
+        
+        // Set product detail values
+        cell.titleLabel.text = productDetail["title"] as? String
+        cell.bodyLabel.text = productDetail["body"] as? String
+        
+        cell.initFavoriteTapRecognizer()
         
         return cell
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        let product = products[indexPath.row]
+        var product = [String: AnyObject]()
+        if searchController!.active {
+            
+            product = filteredProducts[indexPath.row]
+            
+        } else {
+            
+            product = products[indexPath.row]
+        }
         
-        let productTitle = product["title"] as! String
         let productId = product["id"] as! Int
-        print("\(productId) - \(productTitle)")
         
         if let thumbnails = product["thumbnails"] as? [UIImageView] {
             

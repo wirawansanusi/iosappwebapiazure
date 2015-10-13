@@ -17,14 +17,16 @@ class ContactController: UIViewController {
     @IBOutlet weak var callView: UIView!
     @IBOutlet weak var directionView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     var annotation: Annotation?
     var descriptionLabel: UILabel?
+    var contactList = [(UIImage, String, NSURL?)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initStyleForContactContainer()
+        initTableView()
         initRecognizer()
         loadMapLocation()
     }
@@ -38,9 +40,6 @@ class ContactController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        mapView.showsUserLocation = false
         mapView.delegate = nil
-        mapView.removeFromSuperview()
-        mapView = nil
     }
 }

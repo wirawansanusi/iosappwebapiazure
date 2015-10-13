@@ -2,6 +2,18 @@
 
 import UIKit
 
-let string = "Metro Atom Plaza Lt.2 Blok BKS no.38-39, Jl. K.H. Samanhudi, Pasar Baru, DKI Jakarta 10710"
-let newString = string.stringByReplacingOccurrencesOfString(",", withString: "\n")
-newString
+class Item {
+    
+    var isSelected: Bool = true
+    
+    func toggleSelected() {
+        isSelected = !isSelected
+    }
+}
+
+var item = Item()
+item.isSelected
+item.toggleSelected()
+item.isSelected
+item.toggleSelected()
+item.isSelected

@@ -64,13 +64,24 @@ extension ProductsList {
                         
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
                             
-                            // Set the thumbnail image and remove the default background color
-                            let product = self.products[indexPath.row]
+                            var product = [String: AnyObject]()
+                            if self.searchController!.active {
+                                
+                                // Set the thumbnail image and remove the default background color
+                                product = self.filteredProducts[indexPath.row]
+                                
+                            } else {
+                                
+                                // Set the thumbnail image and remove the default background color
+                                product = self.products[indexPath.row]
+                            }
                             let thumbnails = product["thumbnails"] as! [UIImageView]
                             let thumbnail = thumbnails[index]
                             
+                            thumbnail.tag = thumbnailId
                             thumbnail.image = image!
                             thumbnail.contentMode = .ScaleAspectFit
+                            self.initTapRecognizer(thumbnail)
                             activityIndicator.removeFromSuperview()
                         })
                     }

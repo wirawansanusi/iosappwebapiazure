@@ -53,6 +53,14 @@ struct GLOBAL_VALUES {
                         return "http://appmlmfoto.cloudapp.net/api/category/\(categoryId)/post/\(postId)/thumbnail/\(thumbnailId)"
                     }
                 }
+                
+                struct SHOWLARGE {
+                    
+                    static func URL(categoryId: Int, postId: Int, thumbnailId: Int) -> String {
+                        
+                        return "http://appmlmfoto.cloudapp.net/api/category/\(categoryId)/post/\(postId)/thumbnail/\(thumbnailId)/large"
+                    }
+                }
             }
         }
     }
@@ -66,14 +74,53 @@ struct GLOBAL_VALUES {
     
     struct CONTACT {
         
-        struct NUMBER {
+        struct SHOWROOM {
             
-            static let WORK = "tel://+62213450765"
+            static let URL = NSURL(string: "tel://+62213450765")!
             
             struct ALERT {
                 
                 static let TITLE = "Call MLMFOTO"
                 static let MESSAGE = "Apakah anda yakin ingin menghubungi showroom MLMFOTO? \n(+62)21 - 3450 765"
+            }
+        }
+        
+        struct WHATSAPP {
+            
+            static let URL = NSURL(string: "whatsapp://send?abid=+6285780070729")
+            static let TITLE = "WA: 0857 800 707 29"
+            static let IMAGE = UIImage(named: "WA")!
+            
+            struct ALERT {
+                
+                static let TITLE = "Tidak dapat membuka aplikasi"
+                static let MESSAGE = "Pastikan aplikasi WhatsApp sudah terinstall terlebih dahulu."
+            }
+        }
+        
+        struct BBM {
+            
+            static let URL = NSURL(string: "pin://2B5A2E6E")
+            static let TITLE = "BBM PIN 2B 5A 2E 6E"
+            static let IMAGE = UIImage(named: "BBM")!
+            
+            struct ALERT {
+                
+                static let TITLE = "Tidak dapat membuka aplikasi"
+                static let MESSAGE = "Pastikan aplikasi BBM sudah terinstall terlebih dahulu."
+            }
+        }
+        
+        struct EMAIL {
+            
+            static let URL = NSURL(string: "mailto:Contact_us@mlmfoto.com")
+            static let TITLE = "EMAIL Contact_us@mlmfoto.com"
+            static let IMAGE = UIImage(named: "EMAIL")!
+            
+            struct ALERT {
+                
+                static let TITLE = "Tidak dapat membuka aplikasi"
+                static let MESSAGE = "Pastikan aplikasi email sudah terinstall terlebih dahulu."
             }
         }
     }

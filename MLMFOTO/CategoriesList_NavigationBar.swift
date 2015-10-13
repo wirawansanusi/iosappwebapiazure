@@ -18,8 +18,7 @@ extension CategoriesList {
         
         titleView.contentMode = .Center
         titleView.frame = container
-    
+        
         navigationItem.titleView = titleView
-        navigationController?.navigationBar.barTintColor = GLOBAL_VALUES.COLOR.PRIMARY_LIGHT
     }
 }

@@ -102,4 +102,16 @@ extension ProductsList {
         
         products.append(productDetail)
     }
+    
+    // We call this if the search controller is going to display the filtered products
+    // and also when the view is going to navigate back to the previous view
+    func stopFetchingUnfinishedSession () {
+        
+        let session = NSURLSession.sharedSession()
+        session.getAllTasksWithCompletionHandler { (URLSessions: [NSURLSessionTask]) -> Void in
+            for URLSession in URLSessions {
+                URLSession.cancel()
+            }
+        }
+    }
 }

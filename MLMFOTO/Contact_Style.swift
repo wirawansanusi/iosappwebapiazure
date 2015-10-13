@@ -10,16 +10,16 @@ import UIKit
 
 extension ContactController {
     
-    func initStyleForContactContainer() {
-        
-        contactContainer.layer.cornerRadius = 10.0
-        contactContainer.clipsToBounds = true
-    }
-    
     func adjustContactWrapper(lastFrame: CGRect) {
         
-        contactWrapper.contentSize.height = lastFrame.origin.y + lastFrame.size.height + 8.0
+        contactWrapper.contentSize.height = tableView.frame.origin.y + tableView.frame.size.height + 8.0
         contactWrapper.contentInset.top = 20.0
         contactWrapper.contentInset.bottom = 20.0
+    }
+    
+    func stylingTableView() {
+        
+        tableView.separatorInset = UIEdgeInsetsZero
+        tableView.tableFooterView = UIView(frame: CGRectZero)
     }
 }
