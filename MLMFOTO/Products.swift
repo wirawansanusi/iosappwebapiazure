@@ -14,7 +14,7 @@ class Products {
     var title: String
     var body: String
     var thumbnailsId: [Int]
-    var thumbnails: [UIImage]?
+    var thumbnails = [UIImageView]()
     
     init(id: Int, title: String, body: String, thumbnailsId: [Int]){
         

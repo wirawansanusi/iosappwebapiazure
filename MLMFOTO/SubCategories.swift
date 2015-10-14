@@ -12,12 +12,14 @@ class SubCategories {
 
     var id: Int
     var title: String
+    var hasUpdated: Bool
     var parent_title: String
     
-    init(id: Int, title: String, parent_title: String){
+    init(id: Int, title: String, parent_title: String, hasUpdated: Bool){
         
         self.id = id
         self.title = title
+        self.hasUpdated = hasUpdated
         self.parent_title = parent_title
     }
 }

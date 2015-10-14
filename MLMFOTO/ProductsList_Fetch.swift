@@ -65,11 +65,11 @@ extension ProductsList {
                             
                             // Init product object
                             let product = Products(id: id, title: title, body: body, thumbnailsId: thumbnailsId)
-                            self.appendProduct(product)
+                            self.configureProductThumbnail(product)
                         }
-                     
-                        self.reinitTableView()
                         
+                        self.fetchingNewProductsVersion()
+                        self.reinitTableView()
                     }
                     
                 }
@@ -80,9 +80,7 @@ extension ProductsList {
         
     }
     
-    func appendProduct(product: Products) {
-        
-        var productDetail = [String: AnyObject]()
+    func configureProductThumbnail(product: Products) {
         
         if product.thumbnailsId.count > 0 {
             
@@ -92,15 +90,10 @@ extension ProductsList {
                 let thumbnail = UIImageView(frame: CGRect(origin: CGPoint(x: size * CGFloat(index) + 20.0, y: 0), size: CGSize(width: size, height: size)))
                 thumbnails.append(thumbnail)
             }
-            productDetail["thumbnailsId"] = product.thumbnailsId
-            productDetail["thumbnails"] = thumbnails
+            product.thumbnails = thumbnails
         }
         
-        productDetail["id"] = product.id
-        productDetail["title"] = product.title
-        productDetail["body"] = product.body
-        
-        products.append(productDetail)
+        products.append(product)
     }
     
     // We call this if the search controller is going to display the filtered products

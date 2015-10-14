@@ -25,7 +25,20 @@ class CategoriesList: UIViewController {
         
         initNavigationBar()
         initStyling()
-        initJSONData()
+        
+        // First we need to check the latest version
+        // If it has the latest version,
+        // We want to show the Core Data
+        
+            initCoreData()
+        
+        // Else, we want to update into the latest version
+        // From fetching the JSON data
+        // And replacing the newest data by deleting the current ones
+        // And addding the newest data from the beginning
+        
+            //initJSONData()
+        
         initTableView()
         initSearchController()
     }
@@ -37,6 +50,13 @@ class CategoriesList: UIViewController {
             initStyleForTableView()
             tableViewShouldAnimate = false
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        // It's better to modify this function for changing the hasUpdated attributes
+        // instead of iterating all data
+        //initCoreData()
     }
     
     override func viewDidAppear(animated: Bool) {

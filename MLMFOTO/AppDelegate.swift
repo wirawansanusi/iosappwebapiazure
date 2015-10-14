@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MagicalRecord
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,10 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        // Create a background view for status bar frame
         let view = UIView(frame: CGRect(origin: CGPointZero, size: CGSize(width: UIScreen.mainScreen().bounds.size.width, height: 20.0)))
         view.backgroundColor = GLOBAL_VALUES.COLOR.PRIMARY_LIGHT
         self.window?.rootViewController?.view.addSubview(view)
         
+        // Init Magical Record
+        MagicalRecord.setupCoreDataStackWithStoreNamed("MLMFOTO")
         return true
     }
 
@@ -44,6 +48,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        
+        // This tidies up after MagicalRecord, tearing down our custom error handling and 
+        // setting all of the Core Data stack created by MagicalRecord to nil.
+        MagicalRecord.cleanUp()
     }
 
 

@@ -45,7 +45,7 @@ extension ProductsList: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var product = [String: AnyObject]()
+        var product: Products?
         if searchController!.active {
             
             product = filteredProducts[indexPath.row]
@@ -56,38 +56,38 @@ extension ProductsList: UITableViewDelegate, UITableViewDataSource {
         }
         
         var productDetailCell: UITableViewCell?
-        if let _ = product["thumbnails"] as? [UIImageView] {
+        if product?.thumbnails.count > 0 {
             
-            productDetailCell = configureProductDetailCell(product, at: indexPath)
+            productDetailCell = configureProductDetailCell(product!, at: indexPath)
         } else {
             
-            productDetailCell = configureProductDetailWithoutThumbnailCell(product, at: indexPath)
+            productDetailCell = configureProductDetailWithoutThumbnailCell(product!, at: indexPath)
         }
         
         return productDetailCell!
     }
     
-    func configureProductDetailCell(productDetail: [String: AnyObject], at indexPath: NSIndexPath) -> ProductDetailCell {
+    func configureProductDetailCell(product: Products, at indexPath: NSIndexPath) -> ProductDetailCell {
         let cell: ProductDetailCell = tableView.dequeueReusableCellWithIdentifier("productDetailCell", forIndexPath: indexPath) as! ProductDetailCell
         
         // Set product detail values
-        cell.titleLabel.text = productDetail["title"] as? String
-        cell.bodyLabel.text = productDetail["body"] as? String
+        cell.titleLabel.text = product.title
+        cell.bodyLabel.text = product.body
         
-        
+        // Remove existing thumbnail image
         for previousThumbnail in cell.thumbnailContainer.subviews as [UIView] {
             previousThumbnail.removeFromSuperview()
         }
-        if let thumbnails = productDetail["thumbnails"] as? [UIImageView] {
         
-            for index in 0..<thumbnails.count {
-            
-                cell.thumbnailContainer.addSubview(thumbnails[index])
-            }
         
+        for thumbnail in product.thumbnails {
+            cell.thumbnailContainer.addSubview(thumbnail)
+        }
+        
+        if let thumbnail = product.thumbnails.last?.frame {
             // Set scroll view content size to contain all thumbnails
-            cell.thumbnailContainer.contentSize.height = thumbnails.last!.frame.size.height
-            cell.thumbnailContainer.contentSize.width = thumbnails.last!.frame.origin.x + thumbnails.last!.frame.size.width
+            cell.thumbnailContainer.contentSize.height = thumbnail.size.height
+            cell.thumbnailContainer.contentSize.width = thumbnail.origin.x + thumbnail.size.width
         }
         
         cell.initFavoriteTapRecognizer()
@@ -95,12 +95,12 @@ extension ProductsList: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func configureProductDetailWithoutThumbnailCell(productDetail: [String: AnyObject], at indexPath: NSIndexPath) -> ProductDetailWithoutThumbnailCell {
+    func configureProductDetailWithoutThumbnailCell(product: Products, at indexPath: NSIndexPath) -> ProductDetailWithoutThumbnailCell {
         let cell: ProductDetailWithoutThumbnailCell = tableView.dequeueReusableCellWithIdentifier("productDetailWithoutThumbnailCell", forIndexPath: indexPath) as! ProductDetailWithoutThumbnailCell
         
         // Set product detail values
-        cell.titleLabel.text = productDetail["title"] as? String
-        cell.bodyLabel.text = productDetail["body"] as? String
+        cell.titleLabel.text = product.title
+        cell.bodyLabel.text = product.body
         
         cell.initFavoriteTapRecognizer()
         
@@ -109,7 +109,7 @@ extension ProductsList: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        var product = [String: AnyObject]()
+        var product: Products?
         if searchController!.active {
             
             product = filteredProducts[indexPath.row]
@@ -119,16 +119,20 @@ extension ProductsList: UITableViewDelegate, UITableViewDataSource {
             product = products[indexPath.row]
         }
         
-        let productId = product["id"] as! Int
-        
-        if let thumbnails = product["thumbnails"] as? [UIImageView] {
+        if let thumbnails = product?.thumbnails {
             
-            let thumbnailsId = product["thumbnailsId"] as! [Int]
             for index in 0..<thumbnails.count {
-            
-                if thumbnails[index].image == nil {
                 
-                    fetchProductThumbnails(thumbnails[index], productId: productId, thumbnailId: thumbnailsId[index], indexPath: indexPath, index: index)
+                if thumbnails[index].image == nil {
+                    
+                    // check version if it's true or false (need update)
+                    // fetch data inside core data
+                    let success = initThumbnailsCoreData(indexPath, index: index, productId: product!.id, thumbnailId: product!.thumbnailsId[index])
+                    
+                    // fetch data from JSON
+                    if !success {
+                        fetchProductThumbnails(thumbnails[index], productId: product!.id, thumbnailId: product!.thumbnailsId[index], indexPath: indexPath, index: index)
+                    }
                 }
             }
         }

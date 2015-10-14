@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15A284" minimumToolsVersion="Xcode 7.0">
+    <entity name="CDCategories" representedClassName=".CDCategories" syncable="YES">
+        <attribute name="hasUpdated" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="parent" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="subCategories" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="CDCategories" inverseName="subCategories" inverseEntity="CDCategories" syncable="YES"/>
+    </entity>
+    <entity name="CDProducts" representedClassName=".CDProducts" syncable="YES">
+        <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="categoryId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="thumbnails" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="CDThumbnails" inverseName="product" inverseEntity="CDThumbnails" syncable="YES"/>
+    </entity>
+    <entity name="CDThumbnails" representedClassName=".CDThumbnails" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="imageView" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDProducts" inverseName="thumbnails" inverseEntity="CDProducts" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CDCategories" positionX="-36" positionY="36" width="128" height="120"/>
+        <element name="CDProducts" positionX="-27" positionY="81" width="128" height="120"/>
+        <element name="CDThumbnails" positionX="-18" positionY="90" width="128" height="105"/>
+    </elements>
+</model>

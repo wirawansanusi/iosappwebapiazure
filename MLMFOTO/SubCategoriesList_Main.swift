@@ -19,11 +19,20 @@ class SubCategoriesList: UIViewController {
     
     var searchController: LightSearchController?
     
+    var isViewDidLoad = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initTableView()
         initSearchController()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        if isViewDidLoad {
+            initSubCategoriesCoreData()
+        }
     }
     
     override func viewDidAppear(animated: Bool) {

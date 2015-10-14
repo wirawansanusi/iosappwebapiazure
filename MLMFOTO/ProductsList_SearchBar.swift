@@ -35,10 +35,10 @@ extension ProductsList: UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         
-        filteredProducts = products.filter { (product: [String: AnyObject]) -> Bool in
+        filteredProducts = products.filter { (product: Products) -> Bool in
             
-            let title = product["title"] as! String
-            let matchedString = title.rangeOfString(searchController.searchBar.text!)
+            let title = product.title
+            let matchedString = title.rangeOfString(searchController.searchBar.text!, options: .CaseInsensitiveSearch)
             
             return (matchedString != nil)
         }

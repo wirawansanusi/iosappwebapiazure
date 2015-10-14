@@ -28,7 +28,7 @@ extension SubCategoriesList: UISearchResultsUpdating, UISearchBarDelegate {
         
         filteredSubCategories = subCategories.filter({ (subCategory: SubCategories) -> Bool in
             
-            let matchedString = subCategory.title.rangeOfString(searchController.searchBar.text!)
+            let matchedString = subCategory.title.rangeOfString(searchController.searchBar.text!, options: .CaseInsensitiveSearch)
             
             return (matchedString != nil)
         })

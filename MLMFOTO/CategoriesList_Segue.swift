@@ -23,6 +23,7 @@ extension CategoriesList {
             let destination = segue.destinationViewController as! ProductsList
             destination.navigationItem.title = selectedCategory!.title
             destination.categoryId = selectedCategory!.id
+            destination.hasUpdated = selectedCategory!.hasUpdated
         }
     }
 }

@@ -17,6 +17,9 @@ extension SubCategoriesList {
             let destination = segue.destinationViewController as! ProductsList
             destination.navigationItem.title = selectedSubCategory!.title
             destination.categoryId = selectedSubCategory!.id
+            destination.hasUpdated = selectedSubCategory!.hasUpdated
+            
+            isViewDidLoad = true
         }
     }
 }

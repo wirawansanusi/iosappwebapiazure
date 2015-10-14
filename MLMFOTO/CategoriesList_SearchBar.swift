@@ -27,8 +27,8 @@ extension CategoriesList: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         
         filteredCategories = categories.filter { (category: Categories) -> Bool in
-            
-            let matchedString = category.title.rangeOfString(searchController.searchBar.text!)
+    
+            let matchedString = category.title.rangeOfString(searchController.searchBar.text!, options: .CaseInsensitiveSearch)
             
             return (matchedString != nil)
         }

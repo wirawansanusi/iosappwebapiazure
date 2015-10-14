@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		993611C21BCD4EAB004B7F88 /* MLMFOTO.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 993611C01BCD4EAB004B7F88 /* MLMFOTO.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		993611C81BCD547F004B7F88 /* CDCategories+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993611C61BCD547F004B7F88 /* CDCategories+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		993611C91BCD547F004B7F88 /* CDCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993611C71BCD547F004B7F88 /* CDCategories.swift */; settings = {ASSET_TAGS = (); }; };
+		993611CB1BCD557A004B7F88 /* CategoriesList_CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993611CA1BCD557A004B7F88 /* CategoriesList_CoreData.swift */; settings = {ASSET_TAGS = (); }; };
 		996E32671BCB676B00165DA1 /* ThumbnailImage_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996E32661BCB676B00165DA1 /* ThumbnailImage_Main.swift */; settings = {ASSET_TAGS = (); }; };
 		996E32691BCB680900165DA1 /* ThumbnailImage_Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996E32681BCB680900165DA1 /* ThumbnailImage_Fetch.swift */; settings = {ASSET_TAGS = (); }; };
 		996E326F1BCB71C500165DA1 /* ProductsList_Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996E326E1BCB71C500165DA1 /* ProductsList_Segue.swift */; settings = {ASSET_TAGS = (); }; };
@@ -29,6 +33,14 @@
 		99806EB31BC8C26800FEE333 /* ProductsList_InitRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99806EB21BC8C26800FEE333 /* ProductsList_InitRecognizer.swift */; settings = {ASSET_TAGS = (); }; };
 		99806EB71BC9C1CE00FEE333 /* ContactListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99806EB61BC9C1CE00FEE333 /* ContactListCell.swift */; settings = {ASSET_TAGS = (); }; };
 		99806EB91BC9C2C300FEE333 /* Contact_TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99806EB81BC9C2C300FEE333 /* Contact_TableView.swift */; settings = {ASSET_TAGS = (); }; };
+		9992E7061BCDCCFF004A2EA2 /* ProductsList_Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9992E7051BCDCCFF004A2EA2 /* ProductsList_Indicator.swift */; settings = {ASSET_TAGS = (); }; };
+		9992E7081BCDD34C004A2EA2 /* ProductsList_ProductsCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9992E7071BCDD34C004A2EA2 /* ProductsList_ProductsCoreData.swift */; settings = {ASSET_TAGS = (); }; };
+		9992E70D1BCDD4C7004A2EA2 /* CDThumbnails+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9992E7091BCDD4C7004A2EA2 /* CDThumbnails+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		9992E70E1BCDD4C7004A2EA2 /* CDThumbnails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9992E70A1BCDD4C7004A2EA2 /* CDThumbnails.swift */; settings = {ASSET_TAGS = (); }; };
+		9992E70F1BCDD4C7004A2EA2 /* CDProducts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9992E70B1BCDD4C7004A2EA2 /* CDProducts+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		9992E7101BCDD4C7004A2EA2 /* CDProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9992E70C1BCDD4C7004A2EA2 /* CDProducts.swift */; settings = {ASSET_TAGS = (); }; };
+		9992E7121BCDECFB004A2EA2 /* ProductsList_ThumbnailsCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9992E7111BCDECFB004A2EA2 /* ProductsList_ThumbnailsCoreData.swift */; settings = {ASSET_TAGS = (); }; };
+		9992E7141BCEB456004A2EA2 /* SubCategoriesList_CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9992E7131BCEB456004A2EA2 /* SubCategoriesList_CoreData.swift */; settings = {ASSET_TAGS = (); }; };
 		999AA6751BC4AB6900470164 /* Contact_UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999AA6741BC4AB6900470164 /* Contact_UILabel.swift */; settings = {ASSET_TAGS = (); }; };
 		99C9BD631BA2CE3500B1E847 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C9BD621BA2CE3500B1E847 /* AppDelegate.swift */; };
 		99C9BD651BA2CE3500B1E847 /* CategoriesList_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C9BD641BA2CE3500B1E847 /* CategoriesList_Main.swift */; };
@@ -59,6 +71,7 @@
 		99E199A21BC2AB0600F05B85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E199A11BC2AB0600F05B85 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		99F7A2C51BC428F3000E24E2 /* CategoriesList_Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F7A2C41BC428F3000E24E2 /* CategoriesList_Style.swift */; settings = {ASSET_TAGS = (); }; };
 		99F7A2C71BC42C5D000E24E2 /* Contact_Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F7A2C61BC42C5D000E24E2 /* Contact_Style.swift */; settings = {ASSET_TAGS = (); }; };
+		A527A2CAC328B4CA6B6C7A4F /* Pods_MLMFOTO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5607058EB0C78AFAD2A1EFB3 /* Pods_MLMFOTO.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +92,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5607058EB0C78AFAD2A1EFB3 /* Pods_MLMFOTO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MLMFOTO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7149A0F05B0CF5F135172C54 /* Pods-MLMFOTO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLMFOTO.release.xcconfig"; path = "Pods/Target Support Files/Pods-MLMFOTO/Pods-MLMFOTO.release.xcconfig"; sourceTree = "<group>"; };
+		993611C11BCD4EAB004B7F88 /* MLMFOTO.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MLMFOTO.xcdatamodel; sourceTree = "<group>"; };
+		993611C61BCD547F004B7F88 /* CDCategories+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDCategories+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		993611C71BCD547F004B7F88 /* CDCategories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDCategories.swift; sourceTree = "<group>"; };
+		993611CA1BCD557A004B7F88 /* CategoriesList_CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesList_CoreData.swift; sourceTree = "<group>"; };
 		996E32661BCB676B00165DA1 /* ThumbnailImage_Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailImage_Main.swift; sourceTree = "<group>"; };
 		996E32681BCB680900165DA1 /* ThumbnailImage_Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailImage_Fetch.swift; sourceTree = "<group>"; };
 		996E326E1BCB71C500165DA1 /* ProductsList_Segue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsList_Segue.swift; sourceTree = "<group>"; };
@@ -102,6 +121,14 @@
 		99806EB61BC9C1CE00FEE333 /* ContactListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListCell.swift; sourceTree = "<group>"; };
 		99806EB81BC9C2C300FEE333 /* Contact_TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact_TableView.swift; sourceTree = "<group>"; };
 		998B95571BA73EFC00B30B76 /* MLMFOTO-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MLMFOTO-Bridging-Header.h"; sourceTree = "<group>"; };
+		9992E7051BCDCCFF004A2EA2 /* ProductsList_Indicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsList_Indicator.swift; sourceTree = "<group>"; };
+		9992E7071BCDD34C004A2EA2 /* ProductsList_ProductsCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsList_ProductsCoreData.swift; sourceTree = "<group>"; };
+		9992E7091BCDD4C7004A2EA2 /* CDThumbnails+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDThumbnails+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9992E70A1BCDD4C7004A2EA2 /* CDThumbnails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDThumbnails.swift; sourceTree = "<group>"; };
+		9992E70B1BCDD4C7004A2EA2 /* CDProducts+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDProducts+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9992E70C1BCDD4C7004A2EA2 /* CDProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDProducts.swift; sourceTree = "<group>"; };
+		9992E7111BCDECFB004A2EA2 /* ProductsList_ThumbnailsCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsList_ThumbnailsCoreData.swift; sourceTree = "<group>"; };
+		9992E7131BCEB456004A2EA2 /* SubCategoriesList_CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCategoriesList_CoreData.swift; sourceTree = "<group>"; };
 		999AA6741BC4AB6900470164 /* Contact_UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact_UILabel.swift; sourceTree = "<group>"; };
 		99C9BD5F1BA2CE3500B1E847 /* MLMFOTO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLMFOTO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C9BD621BA2CE3500B1E847 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +166,7 @@
 		99E199A11BC2AB0600F05B85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99F7A2C41BC428F3000E24E2 /* CategoriesList_Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesList_Style.swift; sourceTree = "<group>"; };
 		99F7A2C61BC42C5D000E24E2 /* Contact_Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact_Style.swift; sourceTree = "<group>"; };
+		B60033EB39D60128EB6EF7E6 /* Pods-MLMFOTO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLMFOTO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MLMFOTO/Pods-MLMFOTO.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A527A2CAC328B4CA6B6C7A4F /* Pods_MLMFOTO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +195,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		049DE37C8F5D59E92B7E8F25 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B60033EB39D60128EB6EF7E6 /* Pods-MLMFOTO.debug.xcconfig */,
+				7149A0F05B0CF5F135172C54 /* Pods-MLMFOTO.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		993611C51BCD534C004B7F88 /* CoreData Models */ = {
+			isa = PBXGroup;
+			children = (
+				993611C61BCD547F004B7F88 /* CDCategories+CoreDataProperties.swift */,
+				993611C71BCD547F004B7F88 /* CDCategories.swift */,
+				9992E7091BCDD4C7004A2EA2 /* CDThumbnails+CoreDataProperties.swift */,
+				9992E70A1BCDD4C7004A2EA2 /* CDThumbnails.swift */,
+				9992E70B1BCDD4C7004A2EA2 /* CDProducts+CoreDataProperties.swift */,
+				9992E70C1BCDD4C7004A2EA2 /* CDProducts.swift */,
+			);
+			name = "CoreData Models";
+			sourceTree = "<group>";
+		};
 		996E32651BCB675000165DA1 /* Thumbnail Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +273,7 @@
 				99C9BD811BA2CE3600B1E847 /* MLMFOTOUITests */,
 				99C9BD601BA2CE3500B1E847 /* Products */,
 				B6105D3F677D4E5863FD290C /* Frameworks */,
+				049DE37C8F5D59E92B7E8F25 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,7 +296,7 @@
 				99C9BDA01BA3360100B1E847 /* SubCategoriesList */,
 				99C9BD971BA3284A00B1E847 /* CategoriesList */,
 				996E327B1BCC774100165DA1 /* Custom Classes */,
-				99C9BD901BA2CF3D00B1E847 /* Model */,
+				99C9BD901BA2CF3D00B1E847 /* Models */,
 				99C9BDA51BA33A1800B1E847 /* Extension */,
 				99C9BD621BA2CE3500B1E847 /* AppDelegate.swift */,
 				99E1999F1BC286EC00F05B85 /* GLOBAL_VALUES.swift */,
@@ -254,6 +306,7 @@
 				998B95571BA73EFC00B30B76 /* MLMFOTO-Bridging-Header.h */,
 				99C9BDB71BA3BD1600B1E847 /* Playground.playground */,
 				99E199A11BC2AB0600F05B85 /* Assets.xcassets */,
+				993611C01BCD4EAB004B7F88 /* MLMFOTO.xcdatamodeld */,
 			);
 			path = MLMFOTO;
 			sourceTree = "<group>";
@@ -276,14 +329,15 @@
 			path = MLMFOTOUITests;
 			sourceTree = "<group>";
 		};
-		99C9BD901BA2CF3D00B1E847 /* Model */ = {
+		99C9BD901BA2CF3D00B1E847 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				993611C51BCD534C004B7F88 /* CoreData Models */,
 				99C9BD951BA327CA00B1E847 /* Categories.swift */,
 				99C9BD9C1BA3305400B1E847 /* SubCategories.swift */,
 				99C9BDB81BA3C1EA00B1E847 /* Products.swift */,
 			);
-			name = Model;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		99C9BD971BA3284A00B1E847 /* CategoriesList */ = {
@@ -292,6 +346,7 @@
 				99C9BD641BA2CE3500B1E847 /* CategoriesList_Main.swift */,
 				99F7A2C41BC428F3000E24E2 /* CategoriesList_Style.swift */,
 				99C9BD9A1BA329F400B1E847 /* CategoriesList_Fetch.swift */,
+				993611CA1BCD557A004B7F88 /* CategoriesList_CoreData.swift */,
 				99C9BD981BA3286D00B1E847 /* CategoriesList_TableView.swift */,
 				996E32761BCC5F0300165DA1 /* CategoriesList_SearchBar.swift */,
 				99C9BDA81BA33B4000B1E847 /* CategoriesList_NavigationBar.swift */,
@@ -306,6 +361,7 @@
 			children = (
 				99C9BDA11BA3362500B1E847 /* SubCategoriesList_Main.swift */,
 				997C4F261BC9D3C1003B7A4E /* SubCategoriesList_Style.swift */,
+				9992E7131BCEB456004A2EA2 /* SubCategoriesList_CoreData.swift */,
 				99C9BDA31BA3369200B1E847 /* SubCategoriesList_TableView.swift */,
 				996E327C1BCCFDD200165DA1 /* SubCategoriesList_SearchBar.swift */,
 				996E32861BCD130900165DA1 /* SubCategoriesList_Observer.swift */,
@@ -329,6 +385,9 @@
 				996E32801BCD030200165DA1 /* ProductsList_Style.swift */,
 				99C9BDBC1BA3C37700B1E847 /* ProductsList_Fetch.swift */,
 				99E1999D1BC2864100F05B85 /* ProductsList_FetchThumbnails.swift */,
+				9992E7071BCDD34C004A2EA2 /* ProductsList_ProductsCoreData.swift */,
+				9992E7111BCDECFB004A2EA2 /* ProductsList_ThumbnailsCoreData.swift */,
+				9992E7051BCDCCFF004A2EA2 /* ProductsList_Indicator.swift */,
 				99C9BDAF1BA3B37F00B1E847 /* ProductsList_TableView.swift */,
 				996E327E1BCD025B00165DA1 /* ProductsList_SearchBar.swift */,
 				99806EB21BC8C26800FEE333 /* ProductsList_InitRecognizer.swift */,
@@ -356,6 +415,7 @@
 		B6105D3F677D4E5863FD290C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5607058EB0C78AFAD2A1EFB3 /* Pods_MLMFOTO.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -367,9 +427,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99C9BD871BA2CE3600B1E847 /* Build configuration list for PBXNativeTarget "MLMFOTO" */;
 			buildPhases = (
+				2FB8171B35E15489E25904C1 /* Check Pods Manifest.lock */,
 				99C9BD5B1BA2CE3500B1E847 /* Sources */,
 				99C9BD5C1BA2CE3500B1E847 /* Frameworks */,
 				99C9BD5D1BA2CE3500B1E847 /* Resources */,
+				B09BC52C0FB1E4F12859B6DB /* Embed Pods Frameworks */,
+				348C18678E74438AAC7135CC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -487,12 +550,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2FB8171B35E15489E25904C1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		348C18678E74438AAC7135CC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MLMFOTO/Pods-MLMFOTO-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B09BC52C0FB1E4F12859B6DB /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MLMFOTO/Pods-MLMFOTO-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		99C9BD5B1BA2CE3500B1E847 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				99806EB91BC9C2C300FEE333 /* Contact_TableView.swift in Sources */,
+				993611C81BCD547F004B7F88 /* CDCategories+CoreDataProperties.swift in Sources */,
 				99C9BD651BA2CE3500B1E847 /* CategoriesList_Main.swift in Sources */,
 				99C9BDA91BA33B4000B1E847 /* CategoriesList_NavigationBar.swift in Sources */,
 				99F7A2C71BC42C5D000E24E2 /* Contact_Style.swift in Sources */,
@@ -500,10 +612,13 @@
 				99C9BDB01BA3B37F00B1E847 /* ProductsList_TableView.swift in Sources */,
 				99806EAB1BC4CEED00FEE333 /* Contact_InitRecognizer.swift in Sources */,
 				99806EB71BC9C1CE00FEE333 /* ContactListCell.swift in Sources */,
+				9992E7081BCDD34C004A2EA2 /* ProductsList_ProductsCoreData.swift in Sources */,
 				996E327D1BCCFDD200165DA1 /* SubCategoriesList_SearchBar.swift in Sources */,
 				996E32671BCB676B00165DA1 /* ThumbnailImage_Main.swift in Sources */,
 				99806EB11BC87CBF00FEE333 /* ProductDetailWithoutThumbnailCell.swift in Sources */,
+				993611C21BCD4EAB004B7F88 /* MLMFOTO.xcdatamodeld in Sources */,
 				99E1999E1BC2864100F05B85 /* ProductsList_FetchThumbnails.swift in Sources */,
+				9992E70E1BCDD4C7004A2EA2 /* CDThumbnails.swift in Sources */,
 				99D473AC1BC41337003FC833 /* Contact_Map.swift in Sources */,
 				999AA6751BC4AB6900470164 /* Contact_UILabel.swift in Sources */,
 				99C9BD991BA3286D00B1E847 /* CategoriesList_TableView.swift in Sources */,
@@ -511,17 +626,21 @@
 				996E32711BCB86D900165DA1 /* ThumbnailImage_Indicator.swift in Sources */,
 				99C9BD631BA2CE3500B1E847 /* AppDelegate.swift in Sources */,
 				99E199981BC0320E00F05B85 /* ProductDetailCell.swift in Sources */,
+				9992E7101BCDD4C7004A2EA2 /* CDProducts.swift in Sources */,
 				99806EB31BC8C26800FEE333 /* ProductsList_InitRecognizer.swift in Sources */,
 				99C9BDA41BA3369200B1E847 /* SubCategoriesList_TableView.swift in Sources */,
 				996E32851BCD0ED900165DA1 /* ProductsList_Observer.swift in Sources */,
+				993611CB1BCD557A004B7F88 /* CategoriesList_CoreData.swift in Sources */,
 				99C9BD9F1BA3313300B1E847 /* CategoriesList_Segue.swift in Sources */,
 				997C4F271BC9D3C1003B7A4E /* SubCategoriesList_Style.swift in Sources */,
+				9992E7061BCDCCFF004A2EA2 /* ProductsList_Indicator.swift in Sources */,
 				996E32871BCD130900165DA1 /* SubCategoriesList_Observer.swift in Sources */,
 				99C9BD9B1BA329F400B1E847 /* CategoriesList_Fetch.swift in Sources */,
 				99C9BDAE1BA3B33400B1E847 /* ProductsList_Main.swift in Sources */,
 				996E32731BCB8C2C00165DA1 /* ThumbnailImage_DisplayImage.swift in Sources */,
 				99806EAF1BC4D35B00FEE333 /* Contact_Alert.swift in Sources */,
 				99C9BD9D1BA3305400B1E847 /* SubCategories.swift in Sources */,
+				9992E70F1BCDD4C7004A2EA2 /* CDProducts+CoreDataProperties.swift in Sources */,
 				996E327F1BCD025B00165DA1 /* ProductsList_SearchBar.swift in Sources */,
 				996E326F1BCB71C500165DA1 /* ProductsList_Segue.swift in Sources */,
 				996E32691BCB680900165DA1 /* ThumbnailImage_Fetch.swift in Sources */,
@@ -534,11 +653,15 @@
 				99E199A01BC286EC00F05B85 /* GLOBAL_VALUES.swift in Sources */,
 				996E32791BCC76C600165DA1 /* LightSearchController.swift in Sources */,
 				996E32751BCBEFED00165DA1 /* ThumbnailImage_Style.swift in Sources */,
+				9992E7141BCEB456004A2EA2 /* SubCategoriesList_CoreData.swift in Sources */,
 				99C9BDA21BA3362500B1E847 /* SubCategoriesList_Main.swift in Sources */,
 				996E32771BCC5F0300165DA1 /* CategoriesList_SearchBar.swift in Sources */,
+				9992E70D1BCDD4C7004A2EA2 /* CDThumbnails+CoreDataProperties.swift in Sources */,
+				993611C91BCD547F004B7F88 /* CDCategories.swift in Sources */,
 				996E32891BCD13AF00165DA1 /* CategoriesList_Observer.swift in Sources */,
 				99806EAD1BC4CFDA00FEE333 /* Contact_TapRecognizer.swift in Sources */,
 				99F7A2C51BC428F3000E24E2 /* CategoriesList_Style.swift in Sources */,
+				9992E7121BCDECFB004A2EA2 /* ProductsList_ThumbnailsCoreData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,6 +799,7 @@
 		};
 		99C9BD881BA2CE3600B1E847 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B60033EB39D60128EB6EF7E6 /* Pods-MLMFOTO.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -696,6 +820,7 @@
 		};
 		99C9BD891BA2CE3600B1E847 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7149A0F05B0CF5F135172C54 /* Pods-MLMFOTO.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -801,6 +926,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		993611C01BCD4EAB004B7F88 /* MLMFOTO.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				993611C11BCD4EAB004B7F88 /* MLMFOTO.xcdatamodel */,
+			);
+			currentVersion = 993611C11BCD4EAB004B7F88 /* MLMFOTO.xcdatamodel */;
+			path = MLMFOTO.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 99C9BD571BA2CE3500B1E847 /* Project object */;
 }

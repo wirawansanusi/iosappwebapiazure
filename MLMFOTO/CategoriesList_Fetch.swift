@@ -58,8 +58,12 @@ extension CategoriesList {
                             let title = category["title"] as! String
                             let children = category["child"] as! [NSDictionary]
                             
+                            // In new version JSON data will contain updated attribute
+                            // to detect any changes in new version
+                            let hasUpdated = false
+                            
                             // Init Category class
-                            let category = Categories(id: id, title: title)
+                            let category = Categories(id: id, title: title, hasUpdated: hasUpdated)
                             
                             // Check if Category has a children
                             if children.count > 0 {
@@ -75,8 +79,12 @@ extension CategoriesList {
                                     let title = child["title"] as! String
                                     let parent_title = child["parent_title"] as! String
                                     
+                                    // In new version JSON data will contain updated attribute
+                                    // to detect any changes in new version
+                                    let hasUpdated = false
+                                    
                                     // Init Subcategory class
-                                    let subCategory = SubCategories(id: id, title: title, parent_title: parent_title)
+                                    let subCategory = SubCategories(id: id, title: title, parent_title: parent_title, hasUpdated: hasUpdated)
                                     
                                     // Put it into the array
                                     subCategories.append(subCategory)
@@ -99,6 +107,7 @@ extension CategoriesList {
                             
                         } // END FOR..IN Categories
                         
+                        self.fetchingNewDataVersion()
                         self.tableViewShouldAnimate = true
                         self.reinitTableView()
                         

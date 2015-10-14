@@ -12,13 +12,8 @@ extension ProductsList {
     
     func fetchProductThumbnails(thumbnail: UIImageView, productId: Int, thumbnailId: Int, indexPath: NSIndexPath, index: Int){
         
-        let activityIndicator = UIActivityIndicatorView()
-        let thumbnailSize = thumbnail.bounds.size
-        let size = activityIndicator.bounds.size
-        activityIndicator.frame = CGRect(origin: CGPoint(x: thumbnailSize.width / 2 - size.width / 2, y: thumbnailSize.height / 2 - size.height / 2), size: size)
-        thumbnail.addSubview(activityIndicator)
-        activityIndicator.color = GLOBAL_VALUES.COLOR.PRIMARY
-        activityIndicator.startAnimating()
+        // Add animation loading
+        let activityIndicator = showIndicatorOnThumbnail(thumbnail)
         
         // Get the corresponding URL
         let url_string = GLOBAL_VALUES.API.POST.THUMBNAIL.SHOW.URL(categoryId, postId: productId, thumbnailId: thumbnailId)
@@ -64,25 +59,9 @@ extension ProductsList {
                         
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
                             
-                            var product = [String: AnyObject]()
-                            if self.searchController!.active {
-                                
-                                // Set the thumbnail image and remove the default background color
-                                product = self.filteredProducts[indexPath.row]
-                                
-                            } else {
-                                
-                                // Set the thumbnail image and remove the default background color
-                                product = self.products[indexPath.row]
-                            }
-                            let thumbnails = product["thumbnails"] as! [UIImageView]
-                            let thumbnail = thumbnails[index]
-                            
-                            thumbnail.tag = thumbnailId
-                            thumbnail.image = image!
-                            thumbnail.contentMode = .ScaleAspectFit
-                            self.initTapRecognizer(thumbnail)
-                            activityIndicator.removeFromSuperview()
+                            self.setProductThumbnail(indexPath, index: index, thumbnailId: thumbnailId, image: image!)
+                            self.fetchingNewThumbnailsVersion(image!, productId: productId, thumbnailId: thumbnailId)
+                            self.hideIndicator(activityIndicator)
                         })
                     }
                     
@@ -91,5 +70,28 @@ extension ProductsList {
             }
             
         }.resume()  // Require to perform async NSURLSession
+    }
+    
+    func setProductThumbnail(indexPath: NSIndexPath, index: Int, thumbnailId: Int, image: UIImage) {
+        
+        var product: Products?
+        if self.searchController!.active {
+            
+            // Set the thumbnail image and remove the default background color
+            product = self.filteredProducts[indexPath.row]
+            
+        } else {
+            
+            // Set the thumbnail image and remove the default background color
+            product = self.products[indexPath.row]
+        }
+        let thumbnails = product!.thumbnails
+        let thumbnail = thumbnails[index]
+        
+        thumbnail.tag = thumbnailId
+        thumbnail.image = image
+        thumbnail.contentMode = .ScaleAspectFit
+        
+        initTapRecognizer(thumbnail)
     }
 }

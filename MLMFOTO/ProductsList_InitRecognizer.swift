@@ -22,10 +22,21 @@ extension ProductsList {
     
     func willPresentThumbnailImageController(recognizer: UITapGestureRecognizer) {
         
+        let location = recognizer.locationInView(tableView)
         let imageView = recognizer.view as! UIImageView
-        let productIndex = tableView.indexPathForRowAtPoint(imageView.frame.origin)?.row
-        let product = products[productIndex!]
-        selectedPostId = product["id"] as? Int
+        let index = tableView.indexPathForRowAtPoint(location)?.row
+        
+        var product: Products?
+        if searchController!.active {
+            
+            product = filteredProducts[index!]
+            
+        } else {
+            
+            product = products[index!]
+        }
+        
+        selectedPostId = product!.id
         selectedThumbnailId = imageView.tag
     
         performSegueWithIdentifier("showThumbnailImageController", sender: self)
