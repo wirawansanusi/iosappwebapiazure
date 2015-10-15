@@ -22,7 +22,7 @@ class ThumbnailImageController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadJSONData()
+    
+        initLargeThumbnailsCoreData()
     }
 }

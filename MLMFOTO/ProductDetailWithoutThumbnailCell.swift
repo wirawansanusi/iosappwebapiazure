@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MagicalRecord
 
 class ProductDetailWithoutThumbnailCell: UITableViewCell {
     
@@ -14,10 +15,15 @@ class ProductDetailWithoutThumbnailCell: UITableViewCell {
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var favoriteIcon: UIImageView!
     
-    var isFavorited = false
+    var hasFavorited = false
     var tapRecognizer: UITapGestureRecognizer?
+    var productId: Int?
     
-    func initFavoriteTapRecognizer() {
+    func initFavoriteTapRecognizer(productId: Int, hasFavorited: Bool) {
+        self.productId = productId
+        self.hasFavorited = hasFavorited
+        markAsFavoriteProduct(self.hasFavorited)
+        
         if favoriteIcon.gestureRecognizers?.count < 1 {
             tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("toggleFavorite:"))
             tapRecognizer!.numberOfTapsRequired = 1
@@ -29,11 +35,31 @@ class ProductDetailWithoutThumbnailCell: UITableViewCell {
     }
     
     func toggleFavorite(recognizer: UITapGestureRecognizer) {
-        isFavorited = !isFavorited
-        if isFavorited {
-            favoriteIcon.highlighted = true
-        } else {
-            favoriteIcon.highlighted = false
+        hasFavorited = !hasFavorited
+        markAsFavoriteProduct(hasFavorited)
+        addProductIntoFavorite(hasFavorited)
+    }
+    
+    func markAsFavoriteProduct(favorite: Bool) {
+        
+        favoriteIcon.highlighted = favorite
+    }
+    
+    func addProductIntoFavorite(favorite: Bool) {
+        
+        if let id = productId {
+            
+            MagicalRecord.saveWithBlock({ (localContext: NSManagedObjectContext!) -> Void in
+                
+                let productData = CDProducts.MR_findFirstByAttribute("id", withValue: id, inContext: localContext)
+                if productData != nil {
+                    
+                    productData.hasFavorited = favorite
+                }
+                
+                }, completion: { (contextDidSave: Bool, error: NSError!) -> Void in
+            
+            })
         }
     }
 }

@@ -65,6 +65,7 @@ extension ProductsList {
                             
                             // Init product object
                             let product = Products(id: id, title: title, body: body, thumbnailsId: thumbnailsId)
+                            product.hasFavorited = false
                             self.configureProductThumbnail(product)
                         }
                         

@@ -25,5 +25,7 @@ extension CategoriesList {
             destination.categoryId = selectedCategory!.id
             destination.hasUpdated = selectedCategory!.hasUpdated
         }
+        
+        isViewDidLoad = true
     }
 }

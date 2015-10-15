@@ -31,7 +31,7 @@ class SubCategoriesList: UIViewController {
     override func viewWillAppear(animated: Bool) {
         
         if isViewDidLoad {
-            initSubCategoriesCoreData()
+            checkUpdateVersion()
         }
     }
     

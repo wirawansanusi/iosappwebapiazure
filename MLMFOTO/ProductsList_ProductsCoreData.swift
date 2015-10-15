@@ -39,6 +39,7 @@ extension ProductsList {
             }
             
             let product = Products(id: id, title: title, body: body, thumbnailsId: thumbnailsId)
+            product.hasFavorited = productData.hasFavorited?.boolValue
             product.thumbnails = thumbnails
             
             products.append(product)

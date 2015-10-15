@@ -10,7 +10,7 @@ import UIKit
 
 extension ThumbnailImageController {
     
-    func loadJSONData() {
+    func initJSONData() {
         
         let urlPath = GLOBAL_VALUES.API.POST.THUMBNAIL.SHOWLARGE.URL(categoryId, postId: postId, thumbnailId: thumbnailId)
         
@@ -56,9 +56,8 @@ extension ThumbnailImageController {
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
                             
                             // Set the thumbnail image
-                            self.thumbnailImage = image
-                            self.hideIndicator()
-                            self.showImageIntoContainer()
+                            self.initThumbnailImage(image!)
+                            self.fetchingNewLargeThumbnailsVersion(image!, thumbnailId: self.thumbnailId)
                         })
                     }
                     
@@ -68,5 +67,15 @@ extension ThumbnailImageController {
             
         }.resume()
         
+    }
+    
+    func initThumbnailImage(image: UIImage) {
+        
+        self.thumbnailImage = image
+        self.hideIndicator()
+        
+        dispatch_after(UInt64(2.0), dispatch_get_main_queue()) { () -> Void in
+            self.showImageIntoContainer()
+        }
     }
 }

@@ -2,7 +2,7 @@
 //  CDThumbnails+CoreDataProperties.swift
 //  MLMFOTO
 //
-//  Created by wirawan sanusi on 10/14/15.
+//  Created by wirawan sanusi on 10/15/15.
 //  Copyright © 2015 wirawan sanusi. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -17,6 +17,7 @@ extension CDThumbnails {
     @NSManaged var id: NSNumber?
     @NSManaged var imageView: NSObject?
     @NSManaged var imageData: NSData?
+    @NSManaged var largeImageData: NSData?
     @NSManaged var product: CDProducts?
 
 }

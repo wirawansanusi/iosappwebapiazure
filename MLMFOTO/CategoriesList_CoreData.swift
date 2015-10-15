@@ -115,7 +115,29 @@ extension CategoriesList {
                 }
             
                 }) { (success: Bool, error: NSError!) -> Void in
+                    
             }
         }
+    }
+    
+    // We used this function to check if the product data
+    // was already updated
+    func checkUpdateVersion() {
+        
+        for category in categories {
+            
+            let id = category.id
+            MagicalRecord.saveWithBlock({ (localContext: NSManagedObjectContext!) -> Void in
+                
+                let categoryData = CDCategories.MR_findFirstByAttribute("id", withValue: id)
+                let hasUpdated = categoryData.hasUpdated!.boolValue
+                category.hasUpdated = hasUpdated
+                
+                }, completion: { (success: Bool, error: NSError!) -> Void in
+                    
+            })
+        }
+        
+        tableView.reloadData()
     }
 }

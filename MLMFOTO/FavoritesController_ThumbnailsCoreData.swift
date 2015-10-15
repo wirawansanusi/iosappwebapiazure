@@ -1,15 +1,15 @@
 //
-//  ProductsList_ThumbnailsCoreData.swift
+//  FavoritesController_ThumbnailsCoreData.swift
 //  MLMFOTO
 //
-//  Created by wirawan sanusi on 10/14/15.
+//  Created by wirawan sanusi on 10/15/15.
 //  Copyright © 2015 wirawan sanusi. All rights reserved.
 //
 
 import UIKit
 import MagicalRecord
 
-extension ProductsList {
+extension FavoritesController {
     
     func initThumbnailsCoreData(indexPath: NSIndexPath, index: Int, productId: Int, thumbnailId: Int) -> Bool {
         
@@ -18,11 +18,11 @@ extension ProductsList {
             
             let imageData = thumbnailData.imageData
             if let imageExist = imageData {
-            
+                
                 let image = UIImage(data: imageExist)!
                 setProductThumbnail(indexPath, index: index, thumbnailId: thumbnailId, image: image)
                 return true
-            
+                
             } else {
                 return false
             }
@@ -31,7 +31,7 @@ extension ProductsList {
     }
     
     func fetchingNewThumbnailsVersion(image: UIImage, productId: Int, thumbnailId: Int) {
-    
+        
         saveThumbnailsIntoCoreData(image, productId: productId, thumbnailId: thumbnailId)
     }
     

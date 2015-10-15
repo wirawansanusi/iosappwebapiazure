@@ -20,6 +20,8 @@ class CategoriesList: UIViewController {
     
     var searchController: LightSearchController?
     
+    var isViewDidLoad = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,9 +56,9 @@ class CategoriesList: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         
-        // It's better to modify this function for changing the hasUpdated attributes
-        // instead of iterating all data
-        //initCoreData()
+        if isViewDidLoad {
+            checkUpdateVersion()
+        }
     }
     
     override func viewDidAppear(animated: Bool) {

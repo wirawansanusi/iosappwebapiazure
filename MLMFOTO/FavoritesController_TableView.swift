@@ -1,14 +1,14 @@
 //
-//  ProductsList_TableView.swift
+//  FavoritesController_TableView.swift
 //  MLMFOTO
 //
-//  Created by wirawan sanusi on 9/12/15.
+//  Created by wirawan sanusi on 10/15/15.
 //  Copyright © 2015 wirawan sanusi. All rights reserved.
 //
 
 import UIKit
 
-extension ProductsList: UITableViewDelegate, UITableViewDataSource {
+extension FavoritesController: UITableViewDelegate, UITableViewDataSource {
     
     func initTableView() {
         
@@ -73,6 +73,7 @@ extension ProductsList: UITableViewDelegate, UITableViewDataSource {
         // Set product detail values
         cell.titleLabel.text = product.title
         cell.bodyLabel.text = product.body
+        cell.favoriteIcon.highlighted = true
         
         // Remove existing thumbnail image
         for previousThumbnail in cell.thumbnailContainer.subviews as [UIView] {
@@ -105,6 +106,7 @@ extension ProductsList: UITableViewDelegate, UITableViewDataSource {
         // Set product detail values
         cell.titleLabel.text = product.title
         cell.bodyLabel.text = product.body
+        cell.favoriteIcon.highlighted = true
         
         var favoritedProduct = false
         if let hasFavorite = product.hasFavorited {
@@ -130,14 +132,14 @@ extension ProductsList: UITableViewDelegate, UITableViewDataSource {
         if let thumbnails = product?.thumbnails {
             
             for index in 0..<thumbnails.count {
-                    
+                
                 // check version if it's true or false (need update)
                 // fetch data inside core data
                 let success = initThumbnailsCoreData(indexPath, index: index, productId: product!.id, thumbnailId: product!.thumbnailsId[index])
-                    
+                
                 // fetch data from JSON
                 if !success {
-                    fetchProductThumbnails(thumbnails[index], productId: product!.id, thumbnailId: product!.thumbnailsId[index], indexPath: indexPath, index: index)
+                    fetchProductThumbnails(thumbnails[index], categoryId: product!.categoryId!, productId: product!.id, thumbnailId: product!.thumbnailsId[index], indexPath: indexPath, index: index)
                 }
             }
         }

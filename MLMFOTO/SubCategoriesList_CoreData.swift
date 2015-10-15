@@ -13,7 +13,7 @@ extension SubCategoriesList {
     
     // We used this function to check if the product data
     // was already updated
-    func initSubCategoriesCoreData() {
+    func checkUpdateVersion() {
         
         for subCategory in subCategories {
             

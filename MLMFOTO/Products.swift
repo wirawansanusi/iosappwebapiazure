@@ -15,6 +15,8 @@ class Products {
     var body: String
     var thumbnailsId: [Int]
     var thumbnails = [UIImageView]()
+    var categoryId: Int?
+    var hasFavorited: Bool?
     
     init(id: Int, title: String, body: String, thumbnailsId: [Int]){
         
