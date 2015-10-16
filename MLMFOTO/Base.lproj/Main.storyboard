@@ -1096,6 +1096,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hD8-fS-JNr">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="sEv-eT-SJ1"/>
+                                    <constraint firstAttribute="height" constant="37" id="vmL-Xl-2cF"/>
+                                </constraints>
+                                <color key="color" red="0.13725490200000001" green="0.2901960784" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="sEv-eT-SJ1"/>
+                                        <exclude reference="vmL-Xl-2cF"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="sEv-eT-SJ1"/>
+                                        <include reference="vmL-Xl-2cF"/>
+                                    </mask>
+                                </variation>
+                            </activityIndicatorView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1103,30 +1124,38 @@
                             <constraint firstItem="nww-bZ-7TZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="8m6-ia-gvb">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="hD8-fS-JNr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N9v-KZ-m0Z"/>
                             <constraint firstItem="nww-bZ-7TZ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="XzX-5Z-LG8"/>
                             <constraint firstItem="nww-bZ-7TZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cR9-fv-PQX"/>
+                            <constraint firstItem="hD8-fS-JNr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ePI-Cf-eZa"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nww-bZ-7TZ" secondAttribute="bottom" id="eef-Us-VCQ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="nww-bZ-7TZ"/>
+                                <exclude reference="hD8-fS-JNr"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="eef-Us-VCQ"/>
                                 <exclude reference="8m6-ia-gvb"/>
                                 <exclude reference="XzX-5Z-LG8"/>
                                 <exclude reference="cR9-fv-PQX"/>
+                                <exclude reference="N9v-KZ-m0Z"/>
+                                <exclude reference="ePI-Cf-eZa"/>
+                                <exclude reference="eef-Us-VCQ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="nww-bZ-7TZ"/>
+                                <include reference="hD8-fS-JNr"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="eef-Us-VCQ"/>
                                 <include reference="8m6-ia-gvb"/>
                                 <include reference="XzX-5Z-LG8"/>
                                 <include reference="cR9-fv-PQX"/>
+                                <include reference="N9v-KZ-m0Z"/>
+                                <include reference="ePI-Cf-eZa"/>
+                                <include reference="eef-Us-VCQ"/>
                             </mask>
                         </variation>
                     </view>
@@ -1134,6 +1163,7 @@
                     <tabBarItem key="tabBarItem" systemItem="search" id="KKI-MO-nSD"/>
                     <navigationItem key="navigationItem" id="0Nb-Wp-Jnq"/>
                     <connections>
+                        <outlet property="loadingIndicator" destination="hD8-fS-JNr" id="lGJ-7I-qdP"/>
                         <outlet property="searchDisplayController" destination="Xv4-X1-4Et" id="kLt-JI-h7d"/>
                         <outlet property="tableView" destination="nww-bZ-7TZ" id="slD-GP-LYe"/>
                         <segue destination="f5r-WQ-HD0" kind="show" identifier="showSubCategories" id="bQx-uh-qdw"/>

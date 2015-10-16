@@ -30,7 +30,6 @@ class ProductsList: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(hasUpdated)
         if hasUpdated == true {
         
         // First we need to check the latest version
@@ -55,6 +54,11 @@ class ProductsList: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
+        // If we don't call this method, When the tab bar controller view changed,
+        // the selected favorite thumbnailContainer subviews will not retaining the object.
+        // Thus, we need to call this method in order to query the data once more again
+        // and populate it into the array
+        initProductsCoreData()
         initObserver()
     }
     

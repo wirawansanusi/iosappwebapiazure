@@ -12,13 +12,7 @@ extension CategoriesList {
     
     func initJSONData() {
         
-        let activityIndicator = UIActivityIndicatorView()
-        let center = self.view.center
-        let size = activityIndicator.bounds.size
-        activityIndicator.frame = CGRect(origin: CGPoint(x: center.x - size.width / 2, y: center.y - size.height / 2), size: size)
-        self.view.addSubview(activityIndicator)
-        activityIndicator.color = GLOBAL_VALUES.COLOR.PRIMARY
-        activityIndicator.startAnimating()
+        showIndicator()
         
         // Get the corresponding URL
         let url = NSURL(string: GLOBAL_VALUES.API.CATEGORY.INDEX.URL())
@@ -102,12 +96,13 @@ extension CategoriesList {
                             
                             // Remove Activity indicator animation
                             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                activityIndicator.removeFromSuperview()
+                                self.hideIndicator()
                             })
                             
                         } // END FOR..IN Categories
                         
-                        self.fetchingNewDataVersion()
+                        self.checkDataFromCoreData()
+                        self.setintoLatestVersion()
                         self.tableViewShouldAnimate = true
                         self.reinitTableView()
                         

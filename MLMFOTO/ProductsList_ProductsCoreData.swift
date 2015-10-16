@@ -16,6 +16,7 @@ extension ProductsList {
         let predicate = NSPredicate(format: "categoryId = \(categoryId)")
         let productsData = CDProducts.MR_findAllSortedBy("title", ascending: true, withPredicate: predicate) as! [CDProducts]
         
+        products = [Products]()
         for productData in productsData {
             
             let id_number = productData.id!

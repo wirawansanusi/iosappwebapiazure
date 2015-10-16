@@ -51,7 +51,7 @@ extension CategoriesList {
         reinitTableView()
     }
     
-    func fetchingNewDataVersion() {
+    func checkDataFromCoreData() {
         
         deleteAllFromCoreData()
     }
@@ -68,7 +68,6 @@ extension CategoriesList {
                 categoriesData[index].MR_deleteEntityInContext(localContext)
                 
                 }, completion: { (success: Bool, error: NSError!) -> Void in
-                    print(success)
                     
                     if index + 1 == totalData {
                         

@@ -52,6 +52,8 @@
 		9992E7291BCF68D3004A2EA2 /* FavoritesController_Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9992E7281BCF68D3004A2EA2 /* FavoritesController_Observer.swift */; settings = {ASSET_TAGS = (); }; };
 		9992E72B1BCF690C004A2EA2 /* FavoritesController_Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9992E72A1BCF690C004A2EA2 /* FavoritesController_Segue.swift */; settings = {ASSET_TAGS = (); }; };
 		9992E72D1BCF6A2C004A2EA2 /* FavoritesController_Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9992E72C1BCF6A2C004A2EA2 /* FavoritesController_Indicator.swift */; settings = {ASSET_TAGS = (); }; };
+		9992E72F1BCF8A57004A2EA2 /* CategoriesList_FetchVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9992E72E1BCF8A57004A2EA2 /* CategoriesList_FetchVersion.swift */; settings = {ASSET_TAGS = (); }; };
+		9992E7311BD0C9F5004A2EA2 /* CategoriesList_indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9992E7301BD0C9F5004A2EA2 /* CategoriesList_indicator.swift */; settings = {ASSET_TAGS = (); }; };
 		999AA6751BC4AB6900470164 /* Contact_UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999AA6741BC4AB6900470164 /* Contact_UILabel.swift */; settings = {ASSET_TAGS = (); }; };
 		99C9BD631BA2CE3500B1E847 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C9BD621BA2CE3500B1E847 /* AppDelegate.swift */; };
 		99C9BD651BA2CE3500B1E847 /* CategoriesList_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C9BD641BA2CE3500B1E847 /* CategoriesList_Main.swift */; };
@@ -151,6 +153,8 @@
 		9992E7281BCF68D3004A2EA2 /* FavoritesController_Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesController_Observer.swift; sourceTree = "<group>"; };
 		9992E72A1BCF690C004A2EA2 /* FavoritesController_Segue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesController_Segue.swift; sourceTree = "<group>"; };
 		9992E72C1BCF6A2C004A2EA2 /* FavoritesController_Indicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesController_Indicator.swift; sourceTree = "<group>"; };
+		9992E72E1BCF8A57004A2EA2 /* CategoriesList_FetchVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesList_FetchVersion.swift; sourceTree = "<group>"; };
+		9992E7301BD0C9F5004A2EA2 /* CategoriesList_indicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesList_indicator.swift; sourceTree = "<group>"; };
 		999AA6741BC4AB6900470164 /* Contact_UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact_UILabel.swift; sourceTree = "<group>"; };
 		99C9BD5F1BA2CE3500B1E847 /* MLMFOTO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLMFOTO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C9BD621BA2CE3500B1E847 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -386,8 +390,10 @@
 			children = (
 				99C9BD641BA2CE3500B1E847 /* CategoriesList_Main.swift */,
 				99F7A2C41BC428F3000E24E2 /* CategoriesList_Style.swift */,
+				9992E72E1BCF8A57004A2EA2 /* CategoriesList_FetchVersion.swift */,
 				99C9BD9A1BA329F400B1E847 /* CategoriesList_Fetch.swift */,
 				993611CA1BCD557A004B7F88 /* CategoriesList_CoreData.swift */,
+				9992E7301BD0C9F5004A2EA2 /* CategoriesList_indicator.swift */,
 				99C9BD981BA3286D00B1E847 /* CategoriesList_TableView.swift */,
 				996E32761BCC5F0300165DA1 /* CategoriesList_SearchBar.swift */,
 				99C9BDA81BA33B4000B1E847 /* CategoriesList_NavigationBar.swift */,
@@ -659,6 +665,7 @@
 				9992E7081BCDD34C004A2EA2 /* ProductsList_ProductsCoreData.swift in Sources */,
 				9992E72B1BCF690C004A2EA2 /* FavoritesController_Segue.swift in Sources */,
 				996E327D1BCCFDD200165DA1 /* SubCategoriesList_SearchBar.swift in Sources */,
+				9992E7311BD0C9F5004A2EA2 /* CategoriesList_indicator.swift in Sources */,
 				996E32671BCB676B00165DA1 /* ThumbnailImage_Main.swift in Sources */,
 				99806EB11BC87CBF00FEE333 /* ProductDetailWithoutThumbnailCell.swift in Sources */,
 				993611C21BCD4EAB004B7F88 /* MLMFOTO.xcdatamodeld in Sources */,
@@ -708,6 +715,7 @@
 				9992E70D1BCDD4C7004A2EA2 /* CDThumbnails+CoreDataProperties.swift in Sources */,
 				993611C91BCD547F004B7F88 /* CDCategories.swift in Sources */,
 				9992E7211BCF678E004A2EA2 /* FavoritesController_FetchThumbnails.swift in Sources */,
+				9992E72F1BCF8A57004A2EA2 /* CategoriesList_FetchVersion.swift in Sources */,
 				9992E7271BCF6892004A2EA2 /* FavoritesController_InitRecognizer.swift in Sources */,
 				9992E7291BCF68D3004A2EA2 /* FavoritesController_Observer.swift in Sources */,
 				996E32891BCD13AF00165DA1 /* CategoriesList_Observer.swift in Sources */,

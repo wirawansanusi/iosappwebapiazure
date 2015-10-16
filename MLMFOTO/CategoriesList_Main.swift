@@ -11,6 +11,9 @@ import UIKit
 class CategoriesList: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
+    var newestVersion: Int?
     
     var categories = [Categories]()
     var filteredCategories = [Categories]()
@@ -28,18 +31,8 @@ class CategoriesList: UIViewController {
         initNavigationBar()
         initStyling()
         
-        // First we need to check the latest version
-        // If it has the latest version,
-        // We want to show the Core Data
-        
-            initCoreData()
-        
-        // Else, we want to update into the latest version
-        // From fetching the JSON data
-        // And replacing the newest data by deleting the current ones
-        // And addding the newest data from the beginning
-        
-            //initJSONData()
+        // It's all begin here..
+        fetchVersion()
         
         initTableView()
         initSearchController()

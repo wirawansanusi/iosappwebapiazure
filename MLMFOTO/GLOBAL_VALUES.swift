@@ -12,6 +12,17 @@ struct GLOBAL_VALUES {
     
     struct API {
         
+        struct VERSION {
+            
+            struct INDEX {
+                
+                static func URL() -> String {
+                    
+                    return "http://appmlmfoto.cloudapp.net/api"
+                }
+            }
+        }
+        
         struct CATEGORY {
             
             struct INDEX {

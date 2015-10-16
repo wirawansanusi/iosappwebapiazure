@@ -10,6 +10,8 @@ import UIKit
 
 class LightSearchController: UISearchController {
 
+    // The purpose for subclassing UISearchController
+    // is to set the statusbar into white color
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }
