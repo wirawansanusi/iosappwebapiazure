@@ -25,6 +25,8 @@ extension FavoritesController {
                     let id = Int(id_number)
                     let title = productData.title!
                     let body = productData.body!
+                    let version_number = productData.version!
+                    let version = Int(version_number)
                     
                     var thumbnailsId = [Int]()
                     var thumbnails = [UIImageView]()
@@ -41,7 +43,7 @@ extension FavoritesController {
                         }
                     }
                     
-                    let product = Products(id: id, title: title, body: body, thumbnailsId: thumbnailsId)
+                    let product = Products(id: id, title: title, body: body, version: version, thumbnailsId: thumbnailsId)
                     product.hasFavorited = productData.hasFavorited?.boolValue
                     product.thumbnails = thumbnails
                     

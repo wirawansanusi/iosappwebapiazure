@@ -54,10 +54,11 @@ extension CategoriesList {
                             
                             // In new version JSON data will contain updated attribute
                             // to detect any changes in new version
-                            let hasUpdated = false
+                            let version_string = category["version"] as! String
+                            let version = Int(version_string)!
                             
                             // Init Category class
-                            let category = Categories(id: id, title: title, hasUpdated: hasUpdated)
+                            let category = Categories(id: id, title: title, version: version)
                             
                             // Check if Category has a children
                             if children.count > 0 {
@@ -75,10 +76,11 @@ extension CategoriesList {
                                     
                                     // In new version JSON data will contain updated attribute
                                     // to detect any changes in new version
-                                    let hasUpdated = false
+                                    let version_string = child["version"] as! String
+                                    let version = Int(version_string)!
                                     
                                     // Init Subcategory class
-                                    let subCategory = SubCategories(id: id, title: title, parent_title: parent_title, hasUpdated: hasUpdated)
+                                    let subCategory = SubCategories(id: id, title: title, parent_title: parent_title, version: version)
                                     
                                     // Put it into the array
                                     subCategories.append(subCategory)

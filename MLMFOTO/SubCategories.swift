@@ -8,18 +8,12 @@
 
 import UIKit
 
-class SubCategories {
+class SubCategories: Categories {
 
-    var id: Int
-    var title: String
-    var hasUpdated: Bool
     var parent_title: String
     
-    init(id: Int, title: String, parent_title: String, hasUpdated: Bool){
-        
-        self.id = id
-        self.title = title
-        self.hasUpdated = hasUpdated
+    init(id: Int, title: String, parent_title: String, version: Int){
         self.parent_title = parent_title
+        super.init(id: id, title: title, version: version)
     }
 }

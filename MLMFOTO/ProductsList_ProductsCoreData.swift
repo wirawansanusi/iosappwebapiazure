@@ -11,11 +11,8 @@ import MagicalRecord
 
 extension ProductsList {
     
-    func initProductsCoreData() {
-        
-        let predicate = NSPredicate(format: "categoryId = \(categoryId)")
-        let productsData = CDProducts.MR_findAllSortedBy("title", ascending: true, withPredicate: predicate) as! [CDProducts]
-        
+    func initProductsCoreData(productsData: [CDProducts]) {
+    
         products = [Products]()
         for productData in productsData {
             
@@ -23,6 +20,8 @@ extension ProductsList {
             let id = Int(id_number)
             let title = productData.title!
             let body = productData.body!
+            let version_number = productData.version!
+            let version = Int(version_number)
             
             var thumbnailsId = [Int]()
             var thumbnails = [UIImageView]()
@@ -39,18 +38,13 @@ extension ProductsList {
                 }
             }
             
-            let product = Products(id: id, title: title, body: body, thumbnailsId: thumbnailsId)
+            let product = Products(id: id, title: title, body: body, version: version, thumbnailsId: thumbnailsId)
             product.hasFavorited = productData.hasFavorited?.boolValue
             product.thumbnails = thumbnails
             
             products.append(product)
         }
-        
-        if productsData.count > 0 {
-            reinitTableView()
-        } else {
-            initJSONData()
-        }
+        reinitTableView()
         
     }
     
@@ -76,7 +70,6 @@ extension ProductsList {
                     if index + 1 == totalProduct {
                         
                         self.saveProductsIntoCoreData()
-                        self.setCategoryUpdate()
                     }
             })
         }
@@ -85,7 +78,6 @@ extension ProductsList {
         if totalProduct == 0 {
             
             saveProductsIntoCoreData()
-            setCategoryUpdate()
         }
     }
     
@@ -102,6 +94,7 @@ extension ProductsList {
                 productData.id = product.id
                 productData.title = product.title
                 productData.body = product.body
+                productData.version = product.version
                 
                 if product.thumbnailsId.count > 0 {
                     
@@ -125,17 +118,6 @@ extension ProductsList {
                 }, completion: { (success: Bool, error: NSError!) -> Void in
     
             })
-        }
-    }
-    
-    func setCategoryUpdate() {
-        
-        MagicalRecord.saveWithBlock({ (localContext: NSManagedObjectContext!) -> Void in
-            
-            let categoryData = CDCategories.MR_findFirstByAttribute("id", withValue: self.categoryId, inContext: localContext)
-            categoryData.hasUpdated = NSNumber(bool: true)
-            
-            }) { (success: Bool, error: NSError!) -> Void in
         }
     }
 }

@@ -17,20 +17,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="LaunchScreenLogo" translatesAutoresizingMaskIntoConstraints="NO" id="08B-r8-xrc">
-                                <rect key="frame" x="217" y="280" width="167" height="40"/>
+                                <rect key="frame" x="200" y="275" width="200" height="50"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Rmw-Ft-QOH"/>
-                                    <constraint firstAttribute="width" constant="167" id="nQv-2v-wgr"/>
+                                    <constraint firstAttribute="height" constant="50" id="kEW-eO-DM6"/>
+                                    <constraint firstAttribute="width" constant="200" id="tiS-Cp-VkH"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="08B-r8-xrc" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="CYq-0I-rrr"/>
-                            <constraint firstItem="08B-r8-xrc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iTY-Eq-Brm"/>
+                            <constraint firstItem="08B-r8-xrc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9F6-AS-EOc"/>
+                            <constraint firstItem="08B-r8-xrc" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="30" id="CYq-0I-rrr"/>
+                            <constraint firstItem="08B-r8-xrc" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Okk-RU-5EE"/>
+                            <constraint firstItem="08B-r8-xrc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="17" id="iTY-Eq-Brm"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CYq-0I-rrr"/>
+                                <exclude reference="iTY-Eq-Brm"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -39,6 +47,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchScreenLogo" width="167" height="40"/>
+        <image name="LaunchScreenLogo" width="200" height="50"/>
     </resources>
 </document>

@@ -55,16 +55,14 @@ extension ProductsList {
                             // Use the Id from Product Detail to retrieve its information
                             let id_string = product["id"] as! String
                             let id = Int(id_string)!
-                            
                             let title_uppercase = product["title"] as! String
                             let title = title_uppercase.capitalizedString
-                            
                             let body = product["body"] as! String
-                            
+                            let version = self.latestVersion
                             let thumbnailsId = product["thumbnails"] as! [Int]
                             
                             // Init product object
-                            let product = Products(id: id, title: title, body: body, thumbnailsId: thumbnailsId)
+                            let product = Products(id: id, title: title, body: body, version: version, thumbnailsId: thumbnailsId)
                             product.hasFavorited = false
                             self.configureProductThumbnail(product)
                         }

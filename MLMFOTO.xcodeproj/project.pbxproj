@@ -54,6 +54,7 @@
 		9992E72D1BCF6A2C004A2EA2 /* FavoritesController_Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9992E72C1BCF6A2C004A2EA2 /* FavoritesController_Indicator.swift */; settings = {ASSET_TAGS = (); }; };
 		9992E72F1BCF8A57004A2EA2 /* CategoriesList_FetchVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9992E72E1BCF8A57004A2EA2 /* CategoriesList_FetchVersion.swift */; settings = {ASSET_TAGS = (); }; };
 		9992E7311BD0C9F5004A2EA2 /* CategoriesList_indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9992E7301BD0C9F5004A2EA2 /* CategoriesList_indicator.swift */; settings = {ASSET_TAGS = (); }; };
+		9992E7331BD1CE70004A2EA2 /* ProductsList_FetchVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9992E7321BD1CE70004A2EA2 /* ProductsList_FetchVersion.swift */; settings = {ASSET_TAGS = (); }; };
 		999AA6751BC4AB6900470164 /* Contact_UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999AA6741BC4AB6900470164 /* Contact_UILabel.swift */; settings = {ASSET_TAGS = (); }; };
 		99C9BD631BA2CE3500B1E847 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C9BD621BA2CE3500B1E847 /* AppDelegate.swift */; };
 		99C9BD651BA2CE3500B1E847 /* CategoriesList_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C9BD641BA2CE3500B1E847 /* CategoriesList_Main.swift */; };
@@ -155,6 +156,7 @@
 		9992E72C1BCF6A2C004A2EA2 /* FavoritesController_Indicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesController_Indicator.swift; sourceTree = "<group>"; };
 		9992E72E1BCF8A57004A2EA2 /* CategoriesList_FetchVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesList_FetchVersion.swift; sourceTree = "<group>"; };
 		9992E7301BD0C9F5004A2EA2 /* CategoriesList_indicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesList_indicator.swift; sourceTree = "<group>"; };
+		9992E7321BD1CE70004A2EA2 /* ProductsList_FetchVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsList_FetchVersion.swift; sourceTree = "<group>"; };
 		999AA6741BC4AB6900470164 /* Contact_UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact_UILabel.swift; sourceTree = "<group>"; };
 		99C9BD5F1BA2CE3500B1E847 /* MLMFOTO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLMFOTO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C9BD621BA2CE3500B1E847 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 			children = (
 				99C9BDAD1BA3B33400B1E847 /* ProductsList_Main.swift */,
 				996E32801BCD030200165DA1 /* ProductsList_Style.swift */,
+				9992E7321BD1CE70004A2EA2 /* ProductsList_FetchVersion.swift */,
 				99C9BDBC1BA3C37700B1E847 /* ProductsList_Fetch.swift */,
 				99E1999D1BC2864100F05B85 /* ProductsList_FetchThumbnails.swift */,
 				9992E7071BCDD34C004A2EA2 /* ProductsList_ProductsCoreData.swift */,
@@ -650,6 +653,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9992E7331BD1CE70004A2EA2 /* ProductsList_FetchVersion.swift in Sources */,
 				99806EB91BC9C2C300FEE333 /* Contact_TableView.swift in Sources */,
 				9992E7231BCF6804004A2EA2 /* FavoritesController_ThumbnailsCoreData.swift in Sources */,
 				9992E71F1BCF672A004A2EA2 /* FavoritesController_Style.swift in Sources */,

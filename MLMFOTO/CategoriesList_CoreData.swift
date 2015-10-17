@@ -23,9 +23,9 @@ extension CategoriesList {
                     let id_number = categoryData.id!
                     let id = Int(id_number)
                     let title = categoryData.title!
-                    let updated_number = categoryData.hasUpdated
-                    let updated = updated_number!.boolValue
-                    let category = Categories(id: id, title: title, hasUpdated: updated)
+                    let version_number = categoryData.version!
+                    let version = Int(version_number)
+                    let category = Categories(id: id, title: title, version: version)
             
                     var subCategories = [SubCategories]()
                     if let subCategoriesData = categoryData.subCategories {
@@ -35,9 +35,9 @@ extension CategoriesList {
                             let id_number = subCategoryData.id!
                             let id = Int(id_number)
                             let child_title = subCategoryData.title!
-                            let updated_number = subCategoryData.hasUpdated
-                            let updated = updated_number!.boolValue
-                            let subCategory = SubCategories(id: id, title: child_title, parent_title: title, hasUpdated: updated)
+                            let version_number = subCategoryData.version!
+                            let version = Int(version_number)
+                            let subCategory = SubCategories(id: id, title: child_title, parent_title: title, version: version)
                     
                             subCategories.append(subCategory)
                         }
@@ -93,7 +93,7 @@ extension CategoriesList {
                 let categoryData = CDCategories.MR_createEntityInContext(localContext)
                 categoryData.id = category.id
                 categoryData.title = category.title
-                categoryData.hasUpdated = NSNumber(bool: category.hasUpdated)
+                categoryData.version = category.version
                 categoryData.parent = true
 
                 // Check if there's any SubCategories inside the Category
@@ -104,7 +104,7 @@ extension CategoriesList {
                         let subCategoryData = CDCategories.MR_createEntityInContext(localContext)
                         subCategoryData.id = subCategory.id
                         subCategoryData.title = subCategory.title
-                        subCategoryData.hasUpdated = NSNumber(bool: subCategory.hasUpdated)
+                        subCategoryData.version = subCategory.version
                         subCategoryData.parent = false
                         
                         subCategoriesData.addObject(subCategoryData)
@@ -129,8 +129,9 @@ extension CategoriesList {
             MagicalRecord.saveWithBlock({ (localContext: NSManagedObjectContext!) -> Void in
                 
                 let categoryData = CDCategories.MR_findFirstByAttribute("id", withValue: id)
-                let hasUpdated = categoryData.hasUpdated!.boolValue
-                category.hasUpdated = hasUpdated
+                let latestVersion_number = categoryData.version
+                let latestVersion = Int(latestVersion_number!)
+                category.version = latestVersion
                 
                 }, completion: { (success: Bool, error: NSError!) -> Void in
                     

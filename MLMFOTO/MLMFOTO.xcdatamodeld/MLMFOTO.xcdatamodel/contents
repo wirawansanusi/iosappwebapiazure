@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15A284" minimumToolsVersion="Xcode 7.0">
     <entity name="CDCategories" representedClassName=".CDCategories" syncable="YES">
-        <attribute name="hasUpdated" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="parent" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="version" optional="YES" attributeType="Integer 16" syncable="YES"/>
         <relationship name="subCategories" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="CDCategories" inverseName="subCategories" inverseEntity="CDCategories" syncable="YES"/>
     </entity>
     <entity name="CDProducts" representedClassName=".CDProducts" syncable="YES">
@@ -13,6 +13,7 @@
         <attribute name="hasFavorited" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="version" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="thumbnails" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="CDThumbnails" inverseName="product" inverseEntity="CDThumbnails" syncable="YES"/>
     </entity>
     <entity name="CDThumbnails" representedClassName=".CDThumbnails" syncable="YES">
@@ -24,7 +25,7 @@
     </entity>
     <elements>
         <element name="CDCategories" positionX="-36" positionY="36" width="128" height="120"/>
-        <element name="CDProducts" positionX="-27" positionY="81" width="128" height="135"/>
+        <element name="CDProducts" positionX="-27" positionY="81" width="128" height="150"/>
         <element name="CDThumbnails" positionX="-18" positionY="90" width="128" height="120"/>
     </elements>
 </model>

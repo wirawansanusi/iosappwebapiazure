@@ -14,7 +14,7 @@ class ProductsList: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var categoryId: Int!
-    var hasUpdated: Bool!
+    var latestVersion: Int!
     var products = [Products]()
     var filteredProducts =  [Products]()
     
@@ -27,27 +27,12 @@ class ProductsList: UIViewController {
     
     var searchController: LightSearchController?
     
+    var isViewDidLoad = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if hasUpdated == true {
-        
-        // First we need to check the latest version
-        // If it's already updated with the latest version,
-        // We want to show the Core Data
-        
-            initProductsCoreData()
-        
-        } else {
-            
-        // Else, we want to update it into the latest version
-        // by fetching the JSON data
-        // And replacing the newest data by deleting the current ones
-        // And addding the newest data from the beginning
-        
-            initJSONData()
-        }
-        
+
+        checkVersion()
         initTableView()
         initSearchController()
     }
@@ -58,7 +43,12 @@ class ProductsList: UIViewController {
         // the selected favorite thumbnailContainer subviews will not retaining the object.
         // Thus, we need to call this method in order to query the data once more again
         // and populate it into the array
-        initProductsCoreData()
+        
+        // call this if the view already loaded
+        // if tab bar controller view has changed, it will get triggered
+        if isViewDidLoad {
+            checkVersion()
+        }
         initObserver()
     }
     
@@ -68,6 +58,7 @@ class ProductsList: UIViewController {
         dismissSearchController()
         stopFetchingUnfinishedSession()
         removeAllObserver()
+        isViewDidLoad = true
     }
 }
 

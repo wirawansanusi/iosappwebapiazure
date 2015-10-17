@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MagicalRecord
 
 extension CategoriesList {
     
@@ -45,14 +46,14 @@ extension CategoriesList {
         self.newestVersion = newestVersion
         let userDefault = NSUserDefaults.standardUserDefaults()
         let currentVersion = userDefault.integerForKey("version")
+        
+        // if the version not changed but the category core data has been removed
+        let categoriesData = CDCategories.MR_findAll()
     
-        print(currentVersion)
-        print(newestVersion)
         // First we need to check the latest version
         // If it has the latest version,
         // We want to show the Core Data
-        if currentVersion >= newestVersion {
-            print("version is already updated")
+        if currentVersion >= newestVersion && categoriesData.count > 0 {
             initCoreData()
             
         // Else, we want to update into the latest version
@@ -60,7 +61,6 @@ extension CategoriesList {
         // And replacing the newest data by deleting the current ones
         // And addding the newest data from the beginning
         } else {
-            print("updating into new version")
             initJSONData()
         }
     }

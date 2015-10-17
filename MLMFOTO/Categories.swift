@@ -13,13 +13,13 @@ class Categories {
     var id: Int
     var title: String
     var subCategories: [SubCategories]?
-    var hasUpdated: Bool
+    var version: Int
     
-    init(id: Int, title: String, hasUpdated: Bool) {
+    init(id: Int, title: String, version: Int) {
         
         self.id = id
         self.title = title
-        self.hasUpdated = hasUpdated
+        self.version = version
         self.subCategories = [SubCategories]()
     }
 }

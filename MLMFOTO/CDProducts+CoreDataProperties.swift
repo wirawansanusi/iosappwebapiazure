@@ -2,7 +2,7 @@
 //  CDProducts+CoreDataProperties.swift
 //  MLMFOTO
 //
-//  Created by wirawan sanusi on 10/15/15.
+//  Created by wirawan sanusi on 10/17/15.
 //  Copyright © 2015 wirawan sanusi. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -19,6 +19,7 @@ extension CDProducts {
     @NSManaged var body: String?
     @NSManaged var categoryId: NSNumber?
     @NSManaged var hasFavorited: NSNumber?
+    @NSManaged var version: NSNumber?
     @NSManaged var thumbnails: NSOrderedSet?
 
 }

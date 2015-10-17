@@ -21,8 +21,9 @@ extension SubCategoriesList {
             MagicalRecord.saveWithBlock({ (localContext: NSManagedObjectContext!) -> Void in
                 
                 let subCategoryData = CDCategories.MR_findFirstByAttribute("id", withValue: id)
-                let hasUpdated = subCategoryData.hasUpdated!.boolValue
-                subCategory.hasUpdated = hasUpdated
+                let latestVersion_number = subCategoryData.version
+                let latestVersion = Int(latestVersion_number!)
+                subCategory.version = latestVersion
                 
                 }, completion: { (success: Bool, error: NSError!) -> Void in
             })
